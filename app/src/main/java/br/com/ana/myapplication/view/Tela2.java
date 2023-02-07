@@ -1,4 +1,4 @@
-package br.com.ana.myapplication;
+package br.com.ana.myapplication.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 

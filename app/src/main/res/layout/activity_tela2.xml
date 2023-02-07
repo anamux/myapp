@@ -5,15 +5,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context=".Tela2">
+    tools:context=".view.Tela2">
 
-  <ListView
-      android:id="@+id/viewlist"
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content">
-
-
-  </ListView>
+  <androidx.recyclerview.widget.RecyclerView
+      android:id="@+id/recyclerView_plano"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"/>
 
   <Button
       android:id="@+id/bt_envia"
