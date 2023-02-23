@@ -7,10 +7,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="#EEEEEE"
         android:orientation="vertical"
-        tools:context=".MainActivity">
+        tools:context=".view.MainActivity">
 
         <TextView
             android:id="@+id/textView3"
@@ -26,7 +26,7 @@
         <EditText
             android:id="@+id/editNomeCompleto"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="15dp"
             android:background="@color/white"
             android:ems="10"
@@ -38,7 +38,7 @@
         <EditText
             android:id="@+id/editCpf"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="15dp"
             android:background="@color/white"
             android:ems="10"
@@ -50,7 +50,7 @@
         <EditText
             android:id="@+id/editIdade"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="15dp"
             android:background="#FFFFFF"
             android:ems="10"
@@ -62,7 +62,7 @@
         <EditText
             android:id="@+id/editAltura"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="15dp"
             android:background="#FFFFFF"
             android:ems="10"
@@ -74,7 +74,7 @@
         <EditText
             android:id="@+id/editPeso"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="15dp"
             android:background="#FFFFFF"
             android:ems="10"
@@ -95,7 +95,7 @@
         <Switch
             android:id="@+id/switchStatus"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_margin="15dp"
             android:text="Status Ativo/Inativo" />
 
@@ -114,6 +114,12 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Cadastrar" />
+
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
 
     </LinearLayout>

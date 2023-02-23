@@ -7,18 +7,15 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.ana.myapplication.R;
 import br.com.ana.myapplication.adapter.AdapterLista;
 import br.com.ana.myapplication.databinding.ActivityTela2Binding;
 
@@ -27,9 +24,6 @@ public class Tela2 extends AppCompatActivity {
 
     Button bt_envia;
     private ActivityTela2Binding binding;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,16 +47,7 @@ public class Tela2 extends AppCompatActivity {
 
           adapterList.add(cadastros.get(i) .toString());
 
-
-
-
-
         }
-
-
-
-
-
 
 /////////////construção da ViewList
 

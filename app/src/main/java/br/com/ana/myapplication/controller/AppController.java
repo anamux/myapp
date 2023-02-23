@@ -9,13 +9,9 @@ public class AppController {
     String versaoApp;
     public AppController(){
 
-    this.versaoApp = AppUtil.versaoDoAplicativo();
+        this.versaoApp = AppUtil.versaoDoAplicativo();
 
         Log.i(AppUtil.TAG, "AppController: Versão App: "+versaoApp);
-
-
-
-
 
     }
 }

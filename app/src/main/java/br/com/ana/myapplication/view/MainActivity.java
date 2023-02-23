@@ -1,10 +1,12 @@
-package br.com.ana.myapplication;
+package br.com.ana.myapplication.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,9 +18,12 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
-import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.List;
+
+import br.com.ana.myapplication.R;
+import br.com.ana.myapplication.controller.CadastroController;
+import br.com.ana.myapplication.core.AppUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,12 +32,19 @@ public class MainActivity extends AppCompatActivity {
     private EditText nome,cpf,idade,altura,peso;
     private Switch status;
 
+    CadastroController cadastroController;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.d(AppUtil.TAG, "onCreate: App DataBase");
+
+        cadastroController = new CadastroController(getApplicationContext());
+
 
         textView3 = (TextView)findViewById(R.id.textView3);
         String valor = getIntent().getStringExtra("chave");

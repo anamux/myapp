@@ -12,16 +12,17 @@ import br.com.ana.myapplication.core.AppUtil;
 
 public class TelaSplash extends AppCompatActivity {
 
-    int tempoDeEspera = 1000 *1;
+    int tempoDeEspera = 1000 * 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_splash);
 
+        trocarTela();
+    }
 
-
-
+    private void trocarTela() {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -31,8 +32,6 @@ public class TelaSplash extends AppCompatActivity {
 
                 ///classe Intent     objeto trocarDeTela
                 Intent trocarDeTela = new Intent(TelaSplash.this, MainActivity.class);
-
-
                 startActivity(trocarDeTela);
                 finish();
             }
