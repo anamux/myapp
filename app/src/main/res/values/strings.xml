@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Sistema de Academia</string>
+
+
+    <!---Opções do Menu Lateral Drawer -->
+
+
+    <!---Opções do Menu Principal -->
+    <string name="meu_perfil">Meu Perfil</string>
+
+    <!---Opções do Menu Adicionar Cliente -->
+    <string name="add_cliente"> Adicionar Cliente</string>
+    <string name="salvar">Salvar</string>
+    <string name="hora_atual">HORA</string>
+    <string name="data_atual">DATA</string>
 </resources>

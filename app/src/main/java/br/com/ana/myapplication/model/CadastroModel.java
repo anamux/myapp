@@ -5,12 +5,13 @@ import java.util.List;
 import br.com.ana.myapplication.controller.Crud;
 import br.com.ana.myapplication.view.Cadastro;
 
-public class CadastroModel {
+public class CadastroModel implements Crud{
 
     private int id; ///chave primária do DB
     private String nome;
     private String cpf;
     private String altura;
+    private String idade;
     private String peso;
     private boolean status;
 
@@ -26,6 +27,10 @@ public class CadastroModel {
 
     public void setAltura(String altura) {this.altura = altura;}
 
+    public String getIdadea() {return idade;}
+
+    public void setIdade(String idade) {this.idade = altura;}
+
     public String getPeso() {return peso;}
 
     public void setPeso(String peso) {this.peso = peso;}
@@ -38,4 +43,23 @@ public class CadastroModel {
 
     public void setId(int id) {this.id = id;}
 
+   // @Override
+  //  public boolean incluir(Object obj) {
+   //     return false;
+   // }
+
+    @Override
+    public boolean alterar(Object obj) {
+        return false;
+    }
+
+    @Override
+    public boolean deletar(Object obj) {
+        return false;
+    }
+
+    @Override
+    public List<CadastroModel> listar() {
+        return null;
+    }
 }

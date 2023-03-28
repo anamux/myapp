@@ -20,17 +20,21 @@ public class CadastroController extends AppDataBase implements Crud<CadastroMode
 
         Log.d(AppUtil.TAG, "CadastroController: Conectado");
     }
-    @Override
-    public boolean incluir(CadastroModel obj) {
+
+    public void incluir(CadastroModel obj) {
 
         dadoDoObj = new ContentValues();
         dadoDoObj.put(CadastroDataModel.NOME,obj.getNome());
         dadoDoObj.put(CadastroDataModel.ALTURA,obj.getAltura());
         dadoDoObj.put(CadastroDataModel.CPF,obj.getCpf());
         dadoDoObj.put(CadastroDataModel.PESO,obj.getPeso());
-       // dadoDoObj.put(CadastroDataModel.STATUS,obj.getStatus());
+        dadoDoObj.put(String.valueOf(CadastroDataModel.STATUS),obj.isStatus());
 
-        return false;
+        salvarObjeto("cadastro", dadoDoObj);
+
+
+
+        //return insert(CadastroDataModel.TABELA, dadoDoObj);
     }
     @Override
     public boolean alterar(CadastroModel obj) {

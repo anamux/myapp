@@ -11,115 +11,157 @@
         android:background="#EEEEEE"
         android:orientation="vertical"
         tools:context=".view.MainActivity">
-
-        <TextView
-            android:id="@+id/textView3"
+        <!-- Card de Cabeçalho -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:gravity="center"
-            android:text="Cadastro de Aluno"
-            android:textColor="@color/purple_500"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/color_05">
 
-        <EditText
-            android:id="@+id/editNomeCompleto"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:background="@color/white"
-            android:ems="10"
-            android:hint="Nome Completo"
-            android:inputType="textPersonName"
-            android:maxLength="40"
-            android:padding="5dp" />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/editCpf"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:background="@color/white"
-            android:ems="10"
-            android:hint="CPF somente números"
-            android:inputType="number"
-            android:maxLength="11"
-            android:padding="5dp" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:src="@mipmap/ic_app" />
 
-        <EditText
-            android:id="@+id/editIdade"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:hint="Idade"
-            android:inputType="number"
-            android:maxLength="3"
-            android:padding="5dp" />
 
-        <EditText
-            android:id="@+id/editAltura"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:hint="Altura cm"
-            android:inputType="number"
-            android:maxLength="3"
-            android:padding="5dp" />
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:text="@string/add_cliente"
+                    android:textColor="@color/color_03"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-        <EditText
-            android:id="@+id/editPeso"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:hint="Peso"
-            android:inputType="number"
-            android:maxLength="3"
-            android:padding="5dp" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+        <!-- Card de Cabeçalho -->
 
-        <TextView
-            android:id="@+id/textView4"
+        <!--Card dos Edit Text -->
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:text="Status Ativo/Inativo"
-            android:textColor="@color/purple_500"
-            android:textSize="20sp" />
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/color_05">
 
-        <Switch
-            android:id="@+id/switchStatus"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:text="Status Ativo/Inativo" />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/resultado"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/editNomeCompleto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:hint="Nome Completo"
+                    android:inputType="textPersonName"
+                    android:padding="5dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/editCpf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:hint="CPF somente números"
+                    android:inputType="number"
+                    android:maxLength="11"
+                    android:padding="5dp" />
+
+                <EditText
+                    android:id="@+id/editIdade"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:hint="Idade"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:padding="5dp" />
+
+                <EditText
+                    android:id="@+id/editAltura"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:hint="Altura cm"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:padding="5dp" />
+
+                <EditText
+                    android:id="@+id/editPeso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:hint="Peso"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:padding="5dp" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_margin="15dp"
+                    android:text="Status Ativo/Inativo"
+                    android:textColor="@color/color_04"
+                    android:textSize="20sp" />
+
+                <Switch
+                    android:id="@+id/switchStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_margin="15dp"
+                    android:text="Status Ativo/Inativo" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.cardview.widget.CardView>
+        <!--Card dos Edit Text -->
+
+
 
         <Button
             android:id="@+id/bt_Cadastar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Cadastrar" />
+            android:text="@string/salvar" />
 
-
+        <!-- todo criar nova tela para apresentação dos dados cadastrados-->
         <ListView
             android:id="@+id/list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
 
     </LinearLayout>
