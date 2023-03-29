@@ -157,7 +157,6 @@
             android:layout_gravity="center"
             android:text="@string/salvar" />
 
-        <!-- todo criar nova tela para apresentação dos dados cadastrados-->
         <ListView
             android:id="@+id/list"
             android:layout_width="match_parent"
