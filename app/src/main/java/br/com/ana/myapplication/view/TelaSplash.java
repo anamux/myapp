@@ -6,10 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import br.com.ana.myapplication.R;
 import br.com.ana.myapplication.core.AppUtil;
+import br.com.ana.myapplication.databinding.ActivityTelaSplashBinding;
 
 public class TelaSplash extends AppCompatActivity {
 
@@ -17,16 +19,17 @@ public class TelaSplash extends AppCompatActivity {
     TextView txtDataAtual;
     TextView txtHoraAtual;
 
+    private ActivityTelaSplashBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tela_splash);
 
-        txtDataAtual =findViewById(R.id.txtDataAtual);
-        txtHoraAtual =findViewById(R.id.txtHoraAtual);
+        binding = ActivityTelaSplashBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
-        txtDataAtual.setText(AppUtil.getDataAtual());
-        txtHoraAtual.setText(AppUtil.getHoraAtual());
+        binding.txtDataAtual.setText(AppUtil.getDataAtual());
+        binding.txtHoraAtual.setText(AppUtil.getHoraAtual());
 
         trocarTela();
     }
