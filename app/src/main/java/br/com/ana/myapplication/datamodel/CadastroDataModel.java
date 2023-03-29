@@ -11,9 +11,9 @@ public class CadastroDataModel {
     public static final String CPF = "cpf";
     public static final String ALTURA = "altura";
     public static final String PESO = "peso";
-    //public static final boolean STATUS = "status";
+    public static final boolean STATUS = Boolean.parseBoolean("status");
 
-    //3 cruar a query para criar o DB
+    //3 criar a query para criar o DB
 
     public static String queryCriarTabela = "";
 
@@ -26,7 +26,8 @@ public class CadastroDataModel {
         queryCriarTabela+= NOME+" text, ";
         queryCriarTabela+= CPF+" text, ";
         queryCriarTabela+= ALTURA+" text, ";
-        queryCriarTabela+= PESO+" text";
+        queryCriarTabela+= PESO+" text, ";
+        queryCriarTabela+= STATUS+" integer";
         queryCriarTabela+= ")";
 
         return queryCriarTabela;

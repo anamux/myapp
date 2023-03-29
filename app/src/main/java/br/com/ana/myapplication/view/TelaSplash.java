@@ -6,18 +6,27 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.widget.TextView;
 
 import br.com.ana.myapplication.R;
 import br.com.ana.myapplication.core.AppUtil;
 
 public class TelaSplash extends AppCompatActivity {
 
-    int tempoDeEspera = 1000 * 1;
+    int tempoDeEspera = 5000 * 1;
+    TextView txtDataAtual;
+    TextView txtHoraAtual;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tela_splash);
+
+        txtDataAtual =findViewById(R.id.txtDataAtual);
+        txtHoraAtual =findViewById(R.id.txtHoraAtual);
+
+        txtDataAtual.setText(AppUtil.getDataAtual());
+        txtHoraAtual.setText(AppUtil.getHoraAtual());
 
         trocarTela();
     }
@@ -31,7 +40,7 @@ public class TelaSplash extends AppCompatActivity {
                 Log.d(AppUtil.TAG, "trocarTela: Aguardando carregamento de tela");
 
                 ///classe Intent     objeto trocarDeTela
-                Intent trocarDeTela = new Intent(TelaSplash.this, MainActivity.class);
+                Intent trocarDeTela = new Intent(TelaSplash.this, Tela2.class);
                 startActivity(trocarDeTela);
                 finish();
             }

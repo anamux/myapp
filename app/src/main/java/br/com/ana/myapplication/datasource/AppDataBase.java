@@ -1,5 +1,6 @@
 package br.com.ana.myapplication.datasource;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -24,8 +25,6 @@ public class AppDataBase extends SQLiteOpenHelper {
         db=getWritableDatabase();
     }
 
-
-
     @Override
     public void onCreate(SQLiteDatabase db) {
 
@@ -37,7 +36,11 @@ public class AppDataBase extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(SQLiteDatabase db, int i, int i1) { }
+        public void salvarObjeto (String tabela, ContentValues dadoDoObjeto){
+            db.insert(tabela, null, dadoDoObjeto);
+        }
 
-    }
+
+
 }

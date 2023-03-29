@@ -3,7 +3,6 @@ package br.com.ana.myapplication.view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,12 +16,14 @@ import java.util.List;
 
 import br.com.ana.myapplication.R;
 import br.com.ana.myapplication.adapter.AdapterLista;
+import br.com.ana.myapplication.controller.CadastroController;
 import br.com.ana.myapplication.databinding.ActivityTela2Binding;
 
 public class Tela2 extends AppCompatActivity {
 
 
     Button bt_envia;
+    CadastroController cadastroController;
     private ActivityTela2Binding binding;
 
     @Override
@@ -30,17 +31,17 @@ public class Tela2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityTela2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
-        SharedPreferences preferences = getSharedPreferences("my_prefs_data", MODE_PRIVATE);
+// TODO: 27/02/2023 implementar o DB aqui, não mais o SharedPreferences. insert da appdatabase?
+        // TODO: 28/02/2023 implementar a listagem dos dados 
         List<Cadastro> cadastros = new ArrayList<Cadastro>();
 
 
 
         Gson gson = new Gson();
         Type type = new TypeToken<List<Cadastro>>(){}.getType();
-        String listaaluno = preferences.getString("listaalunos", "[]");
+       // String listaaluno = preferences.getString("listaalunos", "[]");
 
-        cadastros = gson.fromJson(listaaluno, type);
+        //cadastros = gson.fromJson(listaaluno, type);
 /////////incrementar dados na lista array
    ArrayList<String> adapterList = new ArrayList<>();
         for (int i=0; i<cadastros.size(); i++){
