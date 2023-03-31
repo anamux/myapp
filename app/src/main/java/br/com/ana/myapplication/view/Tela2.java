@@ -18,6 +18,7 @@ import br.com.ana.myapplication.R;
 import br.com.ana.myapplication.adapter.AdapterLista;
 import br.com.ana.myapplication.controller.CadastroController;
 import br.com.ana.myapplication.databinding.ActivityTela2Binding;
+import br.com.ana.myapplication.model.CadastroModel;
 
 public class Tela2 extends AppCompatActivity {
 
@@ -33,12 +34,12 @@ public class Tela2 extends AppCompatActivity {
         setContentView(binding.getRoot());
 // TODO: 27/02/2023 implementar o DB aqui, não mais o SharedPreferences. insert da appdatabase?
         // TODO: 28/02/2023 implementar a listagem dos dados 
-        List<Cadastro> cadastros = new ArrayList<Cadastro>();
+        List<CadastroModel> cadastros = new ArrayList<CadastroModel>();
 
 
 
         Gson gson = new Gson();
-        Type type = new TypeToken<List<Cadastro>>(){}.getType();
+        Type type = new TypeToken<List<CadastroModel>>(){}.getType();
        // String listaaluno = preferences.getString("listaalunos", "[]");
 
         //cadastros = gson.fromJson(listaaluno, type);

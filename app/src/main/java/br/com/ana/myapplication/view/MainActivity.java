@@ -2,9 +2,7 @@ package br.com.ana.myapplication.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-
 import android.content.Intent;
-
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -12,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Switch;
-import android.widget.TextView;
 
 import br.com.ana.myapplication.controller.CadastroController;
 import br.com.ana.myapplication.core.AppUtil;
@@ -21,9 +18,6 @@ import br.com.ana.myapplication.model.CadastroModel;
 
 public class MainActivity extends AppCompatActivity {
 
-    //////////////Criando objetos
-    EditText nome, cpf, idade, peso, altura;
-    Switch switchStatus;
     CadastroController cadastroController;
     CadastroModel novoCadastro;
     Intent intent;
@@ -39,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(AppUtil.TAG, "onCreate: App DataBase");
 
-        cadastroController = new CadastroController(getApplicationContext());
+        cadastroController = new CadastroController();
 
 ////////////Recupera o id do componente
         binding.editNomeCompleto.setText("");
@@ -50,51 +44,52 @@ public class MainActivity extends AppCompatActivity {
         binding.switchStatus.setChecked(true);
 
         novoCadastro = new CadastroModel();
-        cadastroController = new CadastroController(getApplicationContext());
+        cadastroController = new CadastroController();
         binding.btCadastar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 boolean isDadosOk = true;
 
-                if (TextUtils.isEmpty(nome.getText())) {
+                if (TextUtils.isEmpty(binding.editNomeCompleto.getText())) {
                     isDadosOk = false;
-                    nome.setError("Digite o Nome Completo");
-                    nome.requestFocus();
+                    binding.editNomeCompleto.setError("Digite o Nome Completo");
+                    binding.editNomeCompleto.requestFocus();
                 }
-                if (TextUtils.isEmpty(cpf.getText())) {
+                if (TextUtils.isEmpty(binding.editCpf.getText())) {
                     isDadosOk = false;
-                    cpf.setError("Digite o CPF");
-                    cpf.requestFocus();
+                    binding.editCpf.setError("Digite o CPF");
+                    binding.editCpf.requestFocus();
                 }
-                if (TextUtils.isEmpty(idade.getText())) {
+                if (TextUtils.isEmpty(binding.editIdade.getText())) {
                     isDadosOk = false;
-                    idade.setError("Digite a idade");
+                    binding.editIdade.setError("Digite a idade");
+                    binding.editIdade.requestFocus();
                 }
-                if (TextUtils.isEmpty(altura.getText())) {
+                if (TextUtils.isEmpty(binding.editAltura.getText())) {
                     isDadosOk = false;
-                    altura.setError("Digite a altura");
-                    altura.requestFocus();
+                    binding.editAltura.setError("Digite a altura");
+                    binding.editAltura.requestFocus();
                 }
-                if (TextUtils.isEmpty(peso.getText())) {
+                if (TextUtils.isEmpty(binding.editPeso.getText())) {
                     isDadosOk = false;
-                    peso.setError("Digite o peso");
-                    peso.requestFocus();
+                    binding.editPeso.setError("Digite o peso");
+                    binding.editPeso.requestFocus();
                 }
 
 
                 if (isDadosOk) {
 //popular os dados no obj Cadastro
-                    novoCadastro.setNome(nome.getText().toString());
-                    novoCadastro.setCpf(cpf.getText().toString());
-                    novoCadastro.setIdade(idade.getText().toString());
-                    novoCadastro.setPeso(peso.getText().toString());
-                    novoCadastro.setAltura(altura.getText().toString());
+                    novoCadastro.setNome(binding.editNomeCompleto.getText().toString());
+                    novoCadastro.setCpf(binding.editCpf.getText().toString());
+                    novoCadastro.setIdade(binding.editIdade.getText().toString());
+                    novoCadastro.setPeso(binding.editPeso.getText().toString());
+                    novoCadastro.setAltura(binding.editAltura.getText().toString());
 
-                    novoCadastro.setStatus(switchStatus.isChecked());
+                    novoCadastro.setStatus(binding.switchStatus.isChecked());
 
 
-                    cadastroController.incluir(novoCadastro);
+                    cadastroController.insert(novoCadastro);
                 } else {
 
                 }
